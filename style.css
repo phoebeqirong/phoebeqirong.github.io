@@ -1,0 +1,334 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*
+ Page.
+*/
+.page {
+  background-color: #f0f0f0;
+  font-family: system-ui;
+}
+.page__container {
+  margin: 0 auto;
+  max-width: 1950px;
+}
+.page__title {
+  text-align: center;
+  font-size: large;
+  font-weight: normal;
+}
+.page__heading {
+  text-align: center;
+  display: block;
+  line-height: 30px;
+}
+.page__note {
+  clear: both;
+  font-size: small;
+}
+.page__separator {
+  clear: both;
+  width: 50%;
+  border: 0 none;
+  border-bottom: 1px solid #b0bec5;
+  padding-top: 48px;
+}
+
+/*
+ Year.
+*/
+.year {
+  clear: both;
+}
+.year__title {
+  font-size: medium;
+  margin: 0;
+  padding: 16px 0 8px;
+}
+
+/*
+ Card.
+*/
+.card {
+  float: left;
+  background-color: white;
+  border: 1px solid #b0bec5;
+  margin: 0 15px 16px 0;
+  font-size: small;
+  height: 174px;
+  width: 174px;
+  position: relative;
+}
+.card:not(.card--empty) {
+  box-shadow: #b4b4b4 0 1px 3px;
+}
+/*.card:hover:not(.card--empty) {
+  box-shadow: #b4b4b4 0 4px 8px;
+  margin: 0 15px 15px 0;
+}*/
+
+.card--vertical {
+  height: 250px;
+}
+.card--horizontal {
+  width: 250px;
+}
+
+.card__content {
+  position: absolute;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.95);
+  width: 100%;
+  border-top: solid 1px white;
+}
+.card--empty {
+  background-color: #f0f0f0;
+}
+.card--dark {
+  background-color: #cccccc;
+  text-align: center;
+  line-height: 174px;
+  font-style: italic;
+  color: #7e7e7e;
+}
+.card--favorite .card__content {
+  background: rgb(255, 251, 231, 0.95);
+  /* box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); */
+}
+
+.card--placeholder {
+  background-color: #ffe7fb;
+}
+.card__title {
+  font-size: small;
+}
+.card__content > * {
+  margin: 4px 6px;
+}
+
+.card a {
+  display: block;
+}
+.card__image {
+  float: none;
+  height: 174px;
+  width: 174px;
+  margin: 0;
+  background-color: #b0bec5;
+}
+.card--vertical .card__image {
+  height: 250px;
+}
+.card--horizontal .card__image {
+  width: 250px;
+}
+
+.card--mini {
+  height: 78px;
+  font-size: x-small;
+}
+.card--mini .card__image {
+  height: 78px;
+  width: 78px;
+}
+.card--mini .card__content {
+  top: 0;
+  right: 0;
+  height: 78px;
+  width: 70%;
+}
+.card--mini .card__title {
+  font-size: x-small;
+}
+.card--mini.card--vertical {
+  height: 116px;
+}
+.card--mini.card--vertical .card__image {
+  height: 116px;
+  width: 82px;
+}
+.card--mini.card--vertical .card__content {
+  height: 116px;
+}
+.card--mini.card--horizontal .card__image {
+  height: 78px;
+  width: 100px;
+}
+
+/*
+ Stat.
+*/
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+@media (max-width: 800px) {
+  .stats {
+    justify-content: flex-start;
+  }
+}
+.stat__title {
+  font-size: small;
+  font-weight: normal;
+  text-align: center;
+  margin: 0;
+  padding: 16px 0 8px;
+}
+.stat__list {
+  font-size: small;
+  list-style: none none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/*
+ Global player.
+*/
+.player {
+  position: sticky;
+  top: 0;
+  border: 1px solid #b0bec5;
+  box-shadow: #b4b4b4 0 1px 3px;
+  background-color: white;
+  width: 100%;
+  height: 32px;
+}
+.player--hidden {
+  display: none;
+}
+.player > * {
+  display: inline-block;
+  height: 32px;
+  line-height: 32px;
+  overflow: hidden;
+  width: 30%;
+  text-align: center;
+  font-size: small;
+}
+.player__year {
+  width: 20%;
+}
+.player__title {
+  width: 45%;
+}
+.player__controls {
+  width: 30%;
+  text-align: right;
+}
+.player__mode,
+.player__control,
+.player__next {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: none;
+  cursor: pointer;
+}
+.player__mode {
+  font-size: 0;
+  background: url("shuffle-disabled.svg") no-repeat;
+  background-size: contain;
+}
+.player__mode--random {
+  font-size: 0;
+  background: url("shuffle.svg") no-repeat;
+  background-size: contain;
+}
+.player__control--start {
+  font-size: 0;
+  background: url("play.svg") no-repeat;
+  background-size: contain;
+}
+.player__control--pause {
+  font-size: 0;
+  background: url("pause.svg") no-repeat;
+  background-size: contain;
+}
+.player__next {
+  font-size: 0;
+  background: url("skip-next.svg") no-repeat;
+  background-size: contain;
+}
+
+.year__playlist {
+  width: 100%;
+  border: 1px solid #b0bec5;
+  box-shadow: #b4b4b4 0 1px 3px;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.song {
+  background-color: white;
+  font-size: small;
+  border-bottom: 1px solid #b0bec5;
+  height: 48px;
+}
+.song--duration_error {
+}
+.song--disabled,
+.song--empty {
+  background-color: #f0f0f0;
+  color: gray;
+}
+.song--favorite {
+  background: rgb(255, 251, 231, 0.95);
+}
+.song__info {
+  padding: 0 5px;
+}
+.song__info--image {
+  width: 48px;
+  font-size: 0;
+  padding: 0;
+}
+.song__info--title {
+  text-align: left;
+  font-weight: normal;
+  padding: 0 5px 0 10px;
+  width: 20%;
+}
+.song__info--artists {
+  width: 20%;
+}
+.song__info--meta {
+  width: 20%;
+  text-align: center;
+}
+@media (max-width: 640px) {
+  .song__info--meta {
+    display: none;
+  }
+  .song__info--artists,
+  .song__info--title {
+    width: 30%;
+  }
+}
+.song__info--duration {
+  text-align: right;
+}
+.song__player {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+}
+.song__player img:hover {
+  filter: brightness(154%);
+}
+.song__player--start {
+  font-size: 0;
+  background: url("play.svg") no-repeat;
+  background-size: contain;
+}
+.song__player--pause {
+  font-size: 0;
+  background: url("pause.svg") no-repeat;
+  background-size: contain;
+}
+.song--playing {
+  background: rgb(255, 251, 231, 0.95);
+}
